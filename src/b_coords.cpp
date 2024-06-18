@@ -14,8 +14,8 @@ bool get_b_coords(Vec3D v1 , Vec3D v2 , Vec3D v3 , Vec3D point , Vec3D* output);
 
 int main(void)
 {
-    unsigned int width = 1024;
-    unsigned int height = 1024;
+    unsigned int width = 512;
+    unsigned int height = 512;
     unsigned int bytes_per_pixel = 3;
     unsigned int image_size = width * height * bytes_per_pixel;
 
