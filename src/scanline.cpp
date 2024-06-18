@@ -30,8 +30,10 @@ int main(void)
     }
 
     // Initialize the image to a dark gray color
-    for (int i=0 ; i<image_size ; i++) {
-        *(output_image + i) = 50;
+    for (int i=0 ; i<image_size ; i+=3) {
+        *(output_image + i) = 0;
+        *(output_image + i + 1) = 120;
+        *(output_image + i + 2) = 120;
     }
 
 	Vec3D v1 = {0.5 , 0.2 , 0};
@@ -87,8 +89,8 @@ void FillTriangle(Vec3D v1 , Vec3D v2 , Vec3D v3 , unsigned char* image , int im
 			y_coord = (int)(i * image_height);
 
             *(image + (y_coord*image_width + x_coord)*3) = 200;
-            *(image + (y_coord*image_width + x_coord)*3 + 1) = 200;
-            *(image + (y_coord*image_width + x_coord)*3 + 2) = 200;
+            *(image + (y_coord*image_width + x_coord)*3 + 1) = 50;
+            *(image + (y_coord*image_width + x_coord)*3 + 2) = 50;
         }
     }
 
@@ -112,8 +114,8 @@ void FillTriangle(Vec3D v1 , Vec3D v2 , Vec3D v3 , unsigned char* image , int im
 			y_coord = (int)(i * image_height);
 		
             *(image + (y_coord*image_width + x_coord)*3) = 200;
-            *(image + (y_coord*image_width + x_coord)*3 + 1) = 200;
-            *(image + (y_coord*image_width + x_coord)*3 + 2) = 200;
+            *(image + (y_coord*image_width + x_coord)*3 + 1) = 50;
+            *(image + (y_coord*image_width + x_coord)*3 + 2) = 50;
 		}
 	}
 }

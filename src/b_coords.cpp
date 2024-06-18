@@ -41,14 +41,14 @@ int main(void)
             if (get_b_coords(v1 , v2 , v3 , point , &b_coords)==true)
             {
                 *(image_data + (i*width + j)*3 + 0) = 200;
-                *(image_data + (i*width + j)*3 + 1) = 200;
-                *(image_data + (i*width + j)*3 + 2) = 200;
-            }
-            else
-            {
-                *(image_data + (i*width + j)*3 + 0) = 50;
                 *(image_data + (i*width + j)*3 + 1) = 50;
                 *(image_data + (i*width + j)*3 + 2) = 50;
+            }
+            else 
+            {
+                *(image_data + (i*width + j)*3 + 0) = 0;
+                *(image_data + (i*width + j)*3 + 1) = 120;
+                *(image_data + (i*width + j)*3 + 2) = 120;
             }
         }
     }
