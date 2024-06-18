@@ -1,5 +1,6 @@
 ## Barycentric Coordinate Method
-![b_coords.jpg](https://github.com/Bruhout/fill-triangle/assets/147948392/aebb4b51-70d2-4be6-a04b-6d01c1fa492b)
+![b_coords.jpg](https://github.com/Bruhout/fill-triangle/assets/147948392/80d94cef-1db7-4123-be45-d8814c55dcf6)
+
 
 ## Conditional Method
 ![conditional.jpg](https://github.com/Bruhout/fill-triangle/assets/147948392/1740295f-a439-4c2e-9430-5709360456cf)
