@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
+#include <chrono>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "../include/stb_image.h"
@@ -31,6 +32,9 @@ int main(void)
     Vec3D point;
 
     Vec3D b_coords;
+
+	// START CLOCK
+	std::chrono::_V2::system_clock::time_point start_time = std::chrono::high_resolution_clock::now();
     for (int i=0 ; i<height ; i++)
     {
         for (int j=0 ;j<width ; j++)
@@ -52,6 +56,12 @@ int main(void)
             }
         }
     }
+	
+	// CALCULATE TIME TAKEN
+	std::chrono::_V2::system_clock::time_point stop_time = std::chrono::high_resolution_clock::now();
+
+	std::chrono::milliseconds duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop_time - start_time);
+	std::cout << "Time taken by b_coords was :"<< duration.count() << " milliseconds" << '\n';
 
     stbi_write_jpg("b_coords.jpg" , width , height , bytes_per_pixel , image_data , 100);
 }

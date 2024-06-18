@@ -7,6 +7,7 @@
 #include "../include/stb_image_write.h"
 
 #include <iostream>
+#include <chrono>
 
 class Line
 {
@@ -67,7 +68,9 @@ int main(void)
 	Line line1(v1 , v2 , v3);
 	Line line2(v2 , v3 , v1);
 	Line line3(v3 , v1 , v2);
-
+	
+	// START CLOCK
+	std::chrono::_V2::system_clock::time_point start_time = std::chrono::high_resolution_clock::now();
 	for (int i=0 ; i<height ; i++)
 	{
 		for (int j=0 ; j<width ; j++)
@@ -90,6 +93,11 @@ int main(void)
 			}
 		}
 	}
+
+	// CALCULATE TIME TAKEN FOR EXECUTION AND PRINT IT OUT
+	std::chrono::_V2::system_clock::time_point stop_time = std::chrono::high_resolution_clock::now();
+	std::chrono::milliseconds duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop_time - start_time); 
+	std::cout << "Time taken by conditional was: " << duration.count() << " milliseconds" << '\n';
 
 	stbi_write_jpg("conditional.jpg" , width , height , bytes_per_pixel , image_data , 100);
 	free(image_data);

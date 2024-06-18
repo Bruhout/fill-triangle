@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <math.h>
+#include <chrono>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "../include/stb_image.h"
@@ -70,8 +71,11 @@ void FillTriangle(Vec3D v1 , Vec3D v2 , Vec3D v3 , unsigned char* image , int im
     // The two slope values correspond to the slopes of the 2 sides of the triangle going down from {x1 , y1}
     double slope_a = (v2.y - v1.y) / (v2.x - v1.x);
     double slope_b = (v3.y - v1.y) / (v3.x - v1.x);
-
-    for (double i=v1.y ; i<v2.y ; i+=pixel_height)
+	
+	// START CLOCK
+	std::chrono::_V2::system_clock::time_point start_time = std::chrono::high_resolution_clock::now();
+    
+	for (double i=v1.y ; i<v2.y ; i+=pixel_height)
     {
         double x_offset_a = (i - v1.y) / slope_a;
         double x_offset_b = (i - v1.y) / slope_b;
@@ -118,4 +122,8 @@ void FillTriangle(Vec3D v1 , Vec3D v2 , Vec3D v3 , unsigned char* image , int im
             *(image + (y_coord*image_width + x_coord)*3 + 2) = 50;
 		}
 	}
+
+	std::chrono::_V2::system_clock::time_point stop_time = std::chrono::high_resolution_clock::now();
+	std::chrono::milliseconds duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop_time - start_time);
+	std::cout << "Time taken by scanline was: " << duration.count() << " milliseconds" << '\n';
 }
