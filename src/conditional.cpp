@@ -96,8 +96,8 @@ int main(void)
 
 	// CALCULATE TIME TAKEN FOR EXECUTION AND PRINT IT OUT
 	std::chrono::_V2::system_clock::time_point stop_time = std::chrono::high_resolution_clock::now();
-	std::chrono::milliseconds duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop_time - start_time); 
-	std::cout << "Time taken by conditional was: " << duration.count() << " milliseconds" << '\n';
+	std::chrono::microseconds duration = std::chrono::duration_cast<std::chrono::microseconds>(stop_time - start_time); 
+	std::cout << "Time taken by conditional was: " << duration.count() << " microseconds" << '\n';
 
 	stbi_write_jpg("conditional.jpg" , width , height , bytes_per_pixel , image_data , 100);
 	free(image_data);

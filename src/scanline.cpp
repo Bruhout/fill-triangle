@@ -124,6 +124,6 @@ void FillTriangle(Vec3D v1 , Vec3D v2 , Vec3D v3 , unsigned char* image , int im
 	}
 
 	std::chrono::_V2::system_clock::time_point stop_time = std::chrono::high_resolution_clock::now();
-	std::chrono::milliseconds duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop_time - start_time);
-	std::cout << "Time taken by scanline was: " << duration.count() << " milliseconds" << '\n';
+	std::chrono::microseconds duration = std::chrono::duration_cast<std::chrono::microseconds>(stop_time - start_time);
+	std::cout << "Time taken by scanline was: " << duration.count() << " microseconds" << '\n';
 }
