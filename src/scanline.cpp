@@ -114,8 +114,8 @@ void FillTriangle(Vec3D v1 , Vec3D v2 , Vec3D v3 , unsigned char* image , int im
 		int y_coord;
 		for (double j=v3.x+x_offset_b ; j<v3.x+x_offset_a ; j+=pixel_width)
 		{
-			x_coord = (int)(j * image_width);
-			y_coord = (int)(i * image_height);
+			x_coord = round(j * image_width);
+			y_coord = round(i * image_height);
 		
             *(image + (y_coord*image_width + x_coord)*3) = 200;
             *(image + (y_coord*image_width + x_coord)*3 + 1) = 50;

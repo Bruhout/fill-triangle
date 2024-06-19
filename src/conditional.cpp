@@ -12,9 +12,9 @@
 class Line
 {
 public:
-	float a;
-	float b;
-	float c;
+	double a;
+	double b;
+	double c;
 	bool shaded_side; // if this is true, means the upper shaded_side is shaded
 
 	Line(Vec3D p1 , Vec3D p2 , Vec3D check_point)
@@ -76,9 +76,9 @@ int main(void)
 		for (int j=0 ; j<width ; j++)
 		{
 			if (
-				line1.point_check(Vec3D(j/(float)width , i/(float)height , 0)) &&
-				line2.point_check(Vec3D(j/(float)width , i/(float)height , 0)) &&
-				line3.point_check(Vec3D(j/(float)width , i/(float)height , 0))
+				line1.point_check(Vec3D(j/(double)width , i/(double)height , 0)) &&
+				line2.point_check(Vec3D(j/(double)width , i/(double)height , 0)) &&
+				line3.point_check(Vec3D(j/(double)width , i/(double)height , 0))
 			)
 			{
 				*(image_data + (i*width+j)*3 + 0) = 200;
